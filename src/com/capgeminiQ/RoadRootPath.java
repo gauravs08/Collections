@@ -1,7 +1,5 @@
 package com.capgeminiQ;
 
-import java.util.Arrays;
-
 /*
  * to find out how many roads need to destroy between 2 cities to disconnect 2 base cities (base will be min and max number in the string)
 S * */

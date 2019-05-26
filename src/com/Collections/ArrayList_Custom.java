@@ -4,7 +4,8 @@
  */
 package com.Collections;
 
-import java.util.*;
+import java.util.AbstractList;
+import java.util.List;
 
 class ArrayList_Custom {
 

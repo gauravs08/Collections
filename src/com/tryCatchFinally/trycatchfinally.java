@@ -18,12 +18,7 @@ public class trycatchfinally {
 	                System.out.println((char) i );
 	            }
 	        } catch (IOException e) {
-	        	System.out.println("--- File catch 2 ---");
-	        	if(e instanceof IOException){
-	        		System.out.println(e);
-	        	}else if(e instanceof Exception){
-	        		System.out.println(e);
-	        	}
+	        	catchMethod(e);
 	        } finally {
 	            if(reader != null){
 	                try {
@@ -35,6 +30,15 @@ public class trycatchfinally {
 	           System.out.println("--- File End ---");
 	        }
 		
+	}
+	
+	public static void catchMethod(IOException e) {
+		System.out.println("--- File catch 2 ---");
+    	if(e instanceof IOException){
+    		System.out.println(e);
+    	}else if(e instanceof Exception){
+    		System.out.println(e);
+    	}
 	}
 
 }

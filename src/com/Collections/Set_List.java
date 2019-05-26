@@ -1,6 +1,10 @@
 package com.Collections;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Set_List {
 
@@ -14,6 +18,11 @@ public class Set_List {
             	System.out.print(count[i]+" ,");
                 set.add(count[i]);
             }
+            
+            Set<Integer> setJava9 = Set.of(1,2,3,4,5);
+            //setnew.add(6); // java.lang.UnsupportedOperationException
+            System.out.println(setJava9);        //Set is unordered
+              
            // set.add(null);
             System.out.println("]");
             System.out.println("---------SET------------");
@@ -39,7 +48,9 @@ public class Set_List {
             
             //List<Integer>
             System.out.println("---------LIST------------");
-            System.out.println("inserting an element in the middle of the list is relatively slow on ArrayList, but fast on LinkedList. And looking up a random element in the list is fast on ArrayList, but slow on LinkedList. ");
+            System.out.println("inserting an element in the middle of the list is relatively slow on ArrayList,"
+            		+ " but fast on LinkedList. And looking up a random element in the list is fast on ArrayList,"
+            		+ " but slow on LinkedList. ");
             List<Integer> list = new java.util.ArrayList<Integer>();
                 for (int i = 0; i < count.length; i++) {
                     list.add(count[i]);
@@ -64,6 +75,7 @@ public class Set_List {
                
                 
             } catch (Exception e) {
+            	System.out.println(e);
             }
         /*
 Count are::

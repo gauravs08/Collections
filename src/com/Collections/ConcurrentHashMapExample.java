@@ -17,17 +17,17 @@ public class ConcurrentHashMapExample {
 	            "australia"};
 	    int len = 8;
 	    //No Order
-	    ConcurrentHashMap<Integer, String> concHM = new ConcurrentHashMap<Integer, String>();
+	    ConcurrentHashMap<Integer, String> cHmap = new ConcurrentHashMap<Integer, String>();
 	    for( int i =0 ; i< 8;i++){
-	    concHM.putIfAbsent(i, str[i]);
-	    concHM.put(i, str[i]);
+	    cHmap.putIfAbsent(i, str[i]);
+	    cHmap.put(i, str[i]);
 	}
 	
-	 Enumeration k = concHM.keys();
+	 Enumeration k = cHmap.keys();
 
 	    while (k.hasMoreElements()) {
 	        Integer key = (Integer) k.nextElement();
-	        System.out.println(key + " > " + concHM.get(key));
+	        System.out.println(key + " > " + cHmap.get(key));
 	    }
 
 }

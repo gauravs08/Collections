@@ -1,9 +1,7 @@
 package com.ExceptionHandling;
-import java.lang.Exception;
-
 
 /*we can narrow the Exception in derived class method ,but we cann't broader the exception class.
- * or we can remove the throws in derived class overrride method*/
+ * or we can remove the throws in derived class override method*/
 class  ExDerive {
 	
 	public void method1() throws Exception{

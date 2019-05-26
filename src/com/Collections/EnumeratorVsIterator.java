@@ -35,6 +35,8 @@ public class EnumeratorVsIterator {
 	        }
 	        enumeration=v.elements();
 	        iter=v.iterator();
+	        
+	        
 	        //*****CODE BLOCK FOR ITERATOR**********************
 	        System.gc();
 	        start=System.currentTimeMillis();
@@ -44,8 +46,11 @@ public class EnumeratorVsIterator {
 	        itTime = System.currentTimeMillis()-start;
 	        System.out.println("Iterator took " +itTime);
 	        //*************END OF ITERATOR BLOCK************************
-	     
+	        
+	        
 	        System.gc();   //request to GC to free up some memory 
+	        
+	        
 	        //*************CODE BLOCK FOR ENUMERATION*******************        
 	        start=System.currentTimeMillis();
 	        while(enumeration.hasMoreElements()){

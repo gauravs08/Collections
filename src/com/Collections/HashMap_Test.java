@@ -1,7 +1,11 @@
 package com.Collections;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class HashMap_Test {
     // Statics
@@ -9,25 +13,25 @@ public class HashMap_Test {
     public static void main(String[] args) {
         System.out.println("Collection HashMap Test");
         HashMap<String, String> hmap = new HashMap<String, String>(); 
-        // Test the Collection interface
+      
         System.out.println("HashMap [UnOrdered], size=" + hmap.size()
                 + ", isEmpty=" + hmap.isEmpty());
         // Adding
-        hmap.put(new String("Harriet"), new String("Bone"));
-        hmap.put(new String("Bailey"), new String("Big Chair"));
-        hmap.put(new String("Max"), new String("Tennis Ball"));
-       // hmap.put(null,null);
+        hmap.put(new String("1"), new String("Orange"));
+        hmap.put(new String("2"), new String("Blue"));
+        hmap.put(new String("3"), new String("Red"));
         System.out.println("HashMap Collection 1 populated, size=" + hmap.size()
                 + ", isEmpty=" + hmap.isEmpty());
 
         // Test Containment/Access
-        String key = new String("Harriet");
+        String key = new String("1");
         if (hmap.containsKey(key)) {
             System.out.println("HashMap Collection 1 access, key=" + key + ", value="
                     + (String) hmap.get(key));
         }
 
-        // Test iteration of keys and values
+        
+        System.out.println("---------------HashMap iteration of keys and values-----------");
  
         Set<String> keys = hmap.keySet();    //keys will have only key
        
@@ -38,24 +42,33 @@ public class HashMap_Test {
         }
         
       //values()
+        for(String val:hmap.values()) {
+        	System.out.println(val);
+        }
+        //		OR
         Collection<String> val  = hmap.values(); 
         System.out.println("collection contains values:");
         iterator = val.iterator();
        while (iterator.hasNext()) {
            System.out.println("   " + iterator.next());
        }
-        //entryset
-        Set<Entry<String, String>> entry  =hmap.entrySet();  //entry will have [ key = value ]
+       
+       System.out.println("---------------Entry Set [key = value]-----------");
+        Set<Entry<String, String>> entry  = hmap.entrySet();  //entry will have [ key = value ]
         System.out.println("HashMap Collection 1 iteration (unsorted), collection contains entrykeys:");
          iterator = entry.iterator();
         while (iterator.hasNext()) {
             System.out.println("   " + iterator.next());
         }
         
+        System.out.println("---------------Reverse Sorting HashMap using Value-----------");
+        hmap.entrySet().stream()
+        .sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue()))
+        .forEach(k -> System.out.println(k.getKey() + ": " + k.getValue()));
         
        
-        //TreeMap
-         TreeMap<String, String> Tmap =new TreeMap<String, String>();
+        System.out.println("---------------Tree Map-----------");
+         TreeMap<String, String> Tmap = new TreeMap<String, String>();
          Tmap.putAll(hmap);
          System.out.println("TreeMap [sorted by key]::\n"+Tmap);
          
@@ -63,4 +76,6 @@ public class HashMap_Test {
         System.out.println("HashMap Collection 1 cleared, size=" + hmap.size()
                 + ", isEmpty=" + hmap.isEmpty());
     }
+    
+    
 }

@@ -1,28 +1,29 @@
 package com.Collections;
-import java.util.*;
+import java.util.Collections;
+import java.util.ListIterator;
+import java.util.Random;
 public class ArrayList_Test {
    // Statics
    public static void main( String [] args ) {
-      System.out.println( "List Test" );
-       String [] toys = { "Shoe", "Ball", "Frisbee" };
-      // Create a collection
+       String [] toys = { "Shoe", "Ball", "Frisbee","Toy" };
+     
       ArrayList arrlist = new ArrayList(toys);
-      // Adding
      
       //list.addAll( Arrays.toList( toys ) );
-      // Sizing
       System.out.println( "arrlist created" +
         ", size=" + arrlist.size() +
         ", isEmpty=" + arrlist.isEmpty() );
  
-      // Iteration using indexes.
-      System.out.println( "arrlist iteration (unsorted):" );
+      
+      System.out.println( "--------------Iteration using indexes (Unsorted)-----------------" );
+      
       for ( int i = 0; i < arrlist.size(); i++ )
          System.out.println( "   " + arrlist.get( i ) );
       
-      // Reverse Iteration using ListIterator
-      System.out.println( "arrlist iteration (reverse):" );
-      ListIterator iterator = arrlist.listIterator( arrlist.size() );
+      
+      System.out.println( "------------- Reverse Iteration using ListIterator----------------" );
+     
+      ListIterator iterator = arrlist.listIterator(arrlist.size() );
       while ( iterator.hasPrevious() ) {
          System.out.println( "   " + iterator.previous() );
          
@@ -31,8 +32,13 @@ public class ArrayList_Test {
       
     //  arrlist.remove( 1 );
       //arrlist.clear();
+      System.out.println( "------------- Shuffle using Collections.shuffle(arr,new Random())----------------" );
       Collections.shuffle(arrlist, new Random());
+      System.out.println(arrlist);
+      
       System.out.println(arrlist.get(1).hashCode());
+      Collections.sort(arrlist);
+      System.out.println(arrlist);
       
    }
 }

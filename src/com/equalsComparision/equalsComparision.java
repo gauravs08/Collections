@@ -2,7 +2,7 @@ package com.equalsComparision;
 
 public class equalsComparision {
 
-	//.equal() --> content   ;  == reference
+	//.equal() --> content/objects   ;  == reference/primitive
 	public static void main (String args[]){
 		
 		char c = 'a';

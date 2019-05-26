@@ -12,12 +12,13 @@ public class RunOutOfmemoryErrorTest {
 		runOutOfMemory();
 	}
 	
-	private static final int MEGABYTE = (2024*1024);
+	private static final int MEGABYTE = (2024*1048);
 	public static void runOutOfMemory() {
 	    MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
-	    for (int i=1; i <= 100; i++) {
+	    System.out.println(memoryBean.getHeapMemoryUsage());
+	    for (int i=1; i <= 10000; i++) {
 	        try {
-	            byte[] bytes = new byte[MEGABYTE*500];
+	            byte[] bytes = new byte[MEGABYTE*1024];
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        } catch (OutOfMemoryError e) {

@@ -18,7 +18,20 @@ public class HashCodeTest {
         employees.put(new EmployeeId("333"), new Employee("Jessie"));
         Employee emp = employees.get(new EmployeeId("222"));// Line B
         System.out.println(emp); // Line C
-        }
+    
+		/*
+		 * Integer i =1; System.out.println(i.hashCode()); //return 1
+		 * 
+		 * Character c ='a'; System.out.println(c.hashCode()); //return 97
+		 * 
+		 * String s ="b"; System.out.println(s.hashCode()); //return 98
+		 * 
+		 * System.out.println("ab".hashCode()); //return 3105
+		 * 
+		 * 
+		 * Float f = 1f; System.out.println(f.hashCode()); //return 1065353216
+		 */        
+    }
     }
 
 
