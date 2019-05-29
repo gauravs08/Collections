@@ -5,7 +5,33 @@ import java.io.DataInputStream;
 /*
  * Queue : FIFO
  * */
-public class QusingArray {
+public class ArrayQ {
+	public static void main(String arg[]) {
+		DataInputStream get = new DataInputStream(System.in);
+		int ch;
+		ArrayQ obj = new ArrayQ();
+		obj.getdata();
+		try {
+			do {
+				System.out.println(" 1.Enqueue  2.Dequeue  3.Display  4.Exit");
+				System.out.println("Enter the choice");
+				ch = Integer.parseInt(get.readLine());
+				switch (ch) {
+				case 1:
+					obj.enqueue();
+					break;
+				case 2:
+					obj.dequeue();
+					break;
+				case 3:
+					obj.display();
+					break;
+				}
+			} while (ch != 4);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
 	DataInputStream get = new DataInputStream(System.in);
 	int a[];
@@ -54,35 +80,6 @@ public class QusingArray {
 		else {
 			for (i = front; m < count; i++, m++)
 				System.out.println(" " + a[i]);
-		}
-	}
-}
-
-class Myqueue {
-	public static void main(String arg[]) {
-		DataInputStream get = new DataInputStream(System.in);
-		int ch;
-		QusingArray obj = new QusingArray();
-		obj.getdata();
-		try {
-			do {
-				System.out.println(" 1.Enqueue  2.Dequeue  3.Display  4.Exit");
-				System.out.println("Enter the choice");
-				ch = Integer.parseInt(get.readLine());
-				switch (ch) {
-				case 1:
-					obj.enqueue();
-					break;
-				case 2:
-					obj.dequeue();
-					break;
-				case 3:
-					obj.display();
-					break;
-				}
-			} while (ch != 4);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
 		}
 	}
 }
