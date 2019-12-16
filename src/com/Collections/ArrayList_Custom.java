@@ -10,16 +10,16 @@ import java.util.List;
 class ArrayList_Custom {
 
     public static List ArrayList_Custom(Object[] a) {
-        return new ArrayList(a);
+        return new ArrayListNew(a);
     }
 }
 
-class ArrayList extends AbstractList
+class ArrayListNew extends AbstractList
         implements java.io.Serializable {
 
     private Object[] x;
 
-    ArrayList(Object[] array) {
+    ArrayListNew(Object[] array) {
         x = array;
     }
 
